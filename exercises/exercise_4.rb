@@ -14,3 +14,8 @@ Store.create(:name => 'Yaletown', :annual_revenue => 430000, :mens_apparel => tr
 mens_stores = Store.where(mens_apparel: true)
 
 mens_stores.all.map { |store| puts store.name, store.annual_revenue }
+
+womens_low_rev = Store.where("womens_apparel = true AND annual_revenue < 1000000")
+
+womens_low_rev.all.map { |store| puts store.name, store.annual_revenue } 
+
